@@ -1,0 +1,8 @@
+<resources>
+
+  <string name="app_name">Hilt Assisted Injection</string>
+  <string name="input_edit_text_hint">Input</string>
+  <string name="initial_input">abcd</string>
+  <string name="input_button_text">Submit</string>
+
+</resources>

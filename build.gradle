@@ -1,0 +1,30 @@
+buildscript {
+  ext.kotlin_version = '1.4.10'
+  ext.navigation_version = '2.3.0'
+  ext.lifecycle_version = '2.2.0'
+  ext.dagger_version = '2.29.1-alpha'
+  ext.hilt_version = '1.0.0-alpha02'
+
+  repositories {
+    google()
+    jcenter()
+  }
+
+  dependencies {
+    classpath "com.android.tools.build:gradle:4.0.1"
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    classpath "com.google.dagger:hilt-android-gradle-plugin:$dagger_version"
+    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
