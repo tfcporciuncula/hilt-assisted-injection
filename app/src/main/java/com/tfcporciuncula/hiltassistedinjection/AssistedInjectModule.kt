@@ -7,5 +7,5 @@ import dagger.hilt.android.components.ApplicationComponent
 
 @InstallIn(ApplicationComponent::class)
 @AssistedModule
-@Module(includes = [AssistedInject_AssistedInjectModule::class])
+@Module
 interface AssistedInjectModule
