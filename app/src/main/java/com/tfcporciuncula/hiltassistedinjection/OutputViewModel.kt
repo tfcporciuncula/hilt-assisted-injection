@@ -1,18 +1,19 @@
 package com.tfcporciuncula.hiltassistedinjection
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import javax.inject.Inject
+import com.squareup.inject.assisted.Assisted
+import com.squareup.inject.assisted.AssistedInject
 
-class OutputViewModel @ViewModelInject constructor(
+class OutputViewModel @AssistedInject constructor(
   upperCaseService: UpperCaseService,
-  input: String
+  @Assisted input: String
 ) : ViewModel() {
 
-  class Factory @Inject constructor(private val upperCaseService: UpperCaseService) {
-    fun create(input: String) = OutputViewModel(upperCaseService, input)
+  @AssistedInject.Factory
+  interface Factory {
+    fun create(input: String): OutputViewModel
   }
 
   private val outputLiveData = MutableLiveData(upperCaseService.run(input))

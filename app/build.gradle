@@ -14,6 +14,12 @@ android {
     targetSdkVersion 30
     versionCode 1
     versionName "1.0"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments["dagger.hilt.disableModulesHaveInstallInCheck"] = "true"
+      }
+    }
   }
 
   buildTypes {
@@ -53,4 +59,6 @@ dependencies {
   kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
   implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_version"
   kapt "androidx.hilt:hilt-compiler:$hilt_version"
+  compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:$assisted_version"
+  kapt "com.squareup.inject:assisted-inject-processor-dagger2:$assisted_version"
 }
