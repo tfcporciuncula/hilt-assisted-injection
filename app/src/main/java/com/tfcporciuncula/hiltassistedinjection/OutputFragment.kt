@@ -15,7 +15,7 @@ class OutputFragment : Fragment(R.layout.fragment_output) {
 
   @Inject lateinit var viewModelFactory: OutputViewModel.Factory
 
-  private val viewModel by assistedViewModel { viewModelFactory.create(args.input) }
+  private val viewModel by assistedViewModel { viewModelFactory.create(args.input, it) }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     val binding = FragmentOutputBinding.bind(view)
