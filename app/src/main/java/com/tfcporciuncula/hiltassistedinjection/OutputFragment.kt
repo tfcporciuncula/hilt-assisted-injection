@@ -4,20 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
 import com.tfcporciuncula.hiltassistedinjection.databinding.FragmentOutputBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class OutputFragment : Fragment(R.layout.fragment_output) {
 
-  private val args by navArgs<OutputFragmentArgs>()
-
   private val viewModel by viewModels<OutputViewModel>()
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     val binding = FragmentOutputBinding.bind(view)
     viewModel.outputLiveData().observe(viewLifecycleOwner, binding.outputTextView::setText)
-    viewModel.setInput(args.input)
   }
 }
