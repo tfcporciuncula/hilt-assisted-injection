@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 
 class OutputViewModel @AssistedInject constructor(
   upperCaseService: UpperCaseService,
@@ -13,7 +14,7 @@ class OutputViewModel @AssistedInject constructor(
   @Assisted savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-  @AssistedInject.Factory
+  @AssistedFactory
   interface Factory {
     fun create(input: String, savedStateHandle: SavedStateHandle): OutputViewModel
   }

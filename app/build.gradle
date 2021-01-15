@@ -49,10 +49,6 @@ dependencies {
   implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
   implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
-  implementation "com.google.dagger:hilt-android:$dagger_version"
-  kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
-  implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_version"
-  kapt "androidx.hilt:hilt-compiler:$hilt_version"
-  compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:$assisted_version"
-  kapt "com.squareup.inject:assisted-inject-processor-dagger2:$assisted_version"
+  implementation "com.google.dagger:hilt-android:$hilt_version"
+  kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 }
